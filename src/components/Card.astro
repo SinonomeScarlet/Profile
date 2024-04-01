@@ -1,12 +1,12 @@
 ---
-interface Props{icon:string;title:string;body:string;href:string;}
-const {href,icon,title,body}=Astro.props;
+interface Props{icon:string;title:string;body:string;href:string;rel:string}
+const {href,rel,icon,title,body}=Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
+	<a href={href} rel={rel}>
 		<h2>
-			<img src=`./img/${icon}.svg` alt="ICON" height=20dp/> {title}
+			<img src=`./img/${icon}.svg` alt="ICON" height=20dp oncontextmenu="return false"/> {title}
 			<span>&rarr;</span>
 		</h2>
 		<p>
