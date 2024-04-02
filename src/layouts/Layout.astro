@@ -1,28 +1,52 @@
 ---
-interface Props{title:string;description:string}
-const {title,description} = Astro.props;
+interface Props{title:string;description:string;url:string}
+const {title,description,url} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja">
-	<head>
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+		<!-- DEFAULT -->
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="	image/vnd.microsoft.icon" href="./favicon.ico" />
+		<meta name="format-detection" content="telephone=no,email=no,address=no" />
+		<link rel="icon" type="shortcut image/x-icon" href="./favicon.ico" />
+		<link rel="canonical" href="https://profile.sinonomenetwork.jp/">
+		<!-- Windows -->
+		<meta name="msapplication-config" content="./browserconfig.xml" />
+		<!-- Apple -->
+		<link rel="apple-touch-icon" sizes="512x512" href="./img/favicon.png" />
+		<!-- Android -->
+		<meta name="theme-color" content="#3cb371">
+		
+		<!-- SITEMETA -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="SinonomeNetwork, SinonomeScarlet, 東雲スカーレット" />
+		<meta name="author" content="SinonomeScarlet" />
+		<meta name="copyright" content="© SinonomeNetwork" />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- OGP -->
-		<meta property="og:url" content="https://profile.sinonomenetwork.jp/" />
-		<meta property="og:type" content="profile" />
-		<meta property="og:title" content="SinonomeScarlet's Profile!" />
-		<meta property="og:description" content="SinonomeScarletのプロフィールページ" />
 		<meta property="og:site_name" content="SinonomeNetwork" />
-		<meta property="og:image" content="./img/og_image.png" />
-		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="profile" />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content="https://profile.sinonomenetwork.jp/img/og_image.jpg" />
+		<meta name="thumbnail" content="https://profile.sinonomenetwork.jp/img/og_image.jpg">
+		<meta property="og:locale" content="ja_JP" />
+		<!-- Twitter OGP -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:url" content={url} />
+		<meta name="twitter:image" content="https://profile.sinonomenetwork.jp/img/og_image.jpg" />
+		<meta name="twitter:domain" content="profile.sinonomenetwork.jp" />
+		<meta name="twitter:creator" content="@manago0403_" />
 		<meta name="twitter:site" content="@manago0403_" />
+		<!-- FaceBook OGP -->
 		<meta property=”fb:app_id” content=”968631567683459” />
-		<title>{title}</title>
 	</head>
 	<body>
 		<slot/>
