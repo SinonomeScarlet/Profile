@@ -32,21 +32,20 @@ const {title,description,url} = Astro.props;
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="profile" />
-		<meta property="og:url" content={url} />
+		<meta property="og:url" content="https://profile.sinonomenetwork.jp/" />
 		<meta property="og:image" content="https://profile.sinonomenetwork.jp/img/og_image.jpg" />
 		<meta name="thumbnail" content="https://profile.sinonomenetwork.jp/img/og_image.jpg" />
 		<meta property="og:locale" content="ja_JP" />
+		<meta property=”fb:app_id” content="968631567683459" />
 		<!-- Twitter OGP -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:domain" content="profile.sinonomenetwork.jp" />
-		<meta property="twitter:url" content={url} />
+		<meta property="twitter:url" content="https://profile.sinonomenetwork.jp/" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta name="twitter:image" content="https://profile.sinonomenetwork.jp/img/og_image.jpg" />
 		<meta name="twitter:creator" content="@manago0403_" />
 		<meta name="twitter:site" content="@manago0403_" />
-		<!-- FaceBook OGP -->
-		<meta property=”fb:app_id” content=”968631567683459” />
 	</head>
 	<body>
 		<slot/>
